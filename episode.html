@@ -3,31 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch Episode</title>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
-    <script src="../firebase-config.js"></script>
+    <title>Episode Player</title>
 </head>
 <body>
     <h1 id="episode-title">Loading...</h1>
-    <iframe id="video-player" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+    <iframe id="video-player" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const episodeId = urlParams.get("id");
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDsIeABdHyO_J9jOiY5m-P33kDEy_47zYI",
+            databaseURL: "https://heavenlysubs-7beba-default-rtdb.firebaseio.com"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const params = new URLSearchParams(window.location.search);
+        const episodeId = params.get("id");
 
         if (episodeId) {
-            db.ref(`episodes/${episodeId}`).once("value", (snapshot) => {
+            get(ref(db, "episodes/" + episodeId)).then(snapshot => {
                 if (snapshot.exists()) {
-                    const episode = snapshot.val();
+                    let episode = snapshot.val();
                     document.getElementById("episode-title").innerText = episode.title;
                     document.getElementById("video-player").src = `https://www.dailymotion.com/embed/video/${episode.video_id}`;
                 } else {
-                    document.body.innerHTML = "<h1>Episode not found</h1>";
+                    document.body.innerHTML = "<h1>Episode Not Found</h1>";
                 }
+            }).catch(error => {
+                console.error("Error fetching episode:", error);
+                document.body.innerHTML = "<h1>Error Loading Episode</h1>";
             });
         } else {
-            document.body.innerHTML = "<h1>No episode selected</h1>";
+            document.body.innerHTML = "<h1>Invalid Episode</h1>";
         }
     </script>
 </body>
