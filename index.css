@@ -12,21 +12,20 @@ body {
 
 /* Main Container for the Entire Layout */
 .main-container {
-    max-width: 640px; /* Responsive width, max 640px */
+    max-width: 480px; /* Smaller max width for better fit */
     width: 100%; /* Full width up to max */
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    overflow: hidden;
-    /* Removed box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+    border-radius: 10px; /* Keep the rounded corners */
+    /* Removed background: rgba(0, 0, 0, 0.7); */
 }
 
 /* Cover Image Styling */
 .cover-image {
     width: 100%; /* Responsive width */
     height: auto; /* Maintain aspect ratio */
-    max-height: 360px; /* Max height to fit thumbnail aspect */
+    max-height: 270px; /* Smaller thumbnail (16:9 ratio, 480x270px) */
     object-fit: cover; /* Ensures the image fits without distortion */
     display: block;
+    border-radius: 10px 10px 0 0; /* Match container corners */
 }
 
 /* Episode Container Styling */
@@ -53,8 +52,8 @@ body {
 }
 
 #episode-list {
-    display: grid; /* Use grid for horizontal alignment */
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive columns */
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap into rows */
     list-style: none;
     padding: 0;
     justify-content: center;
@@ -62,9 +61,10 @@ body {
 }
 
 #episode-list li {
-    margin: 0; /* Reset margin for grid control */
+    flex: 0 0 auto; /* Prevent items from growing/shrinking */
+    margin: 0; /* Reset margin for controlled spacing */
     font-size: 12px;
-    position: relative; /* For vertical positioning */
+    position: relative; /* For slight randomization */
 }
 
 #episode-list li a {
@@ -80,12 +80,9 @@ body {
 /* Responsive Design for PC */
 @media (min-width: 1024px) {
     .main-container {
-        max-width: 800px; /* Larger max-width for PC */
+        max-width: 600px; /* Slightly larger for PC */
     }
     .cover-image {
-        max-height: 450px; /* Slightly larger thumbnail on PC */
-    }
-    #episode-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Wider columns on PC */
+        max-height: 337.5px; /* 16:9 ratio, 600x337.5px */
     }
 }
