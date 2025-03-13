@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Episodes</title>
+    <style>
+        #episode-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #episode-list li {
+            margin-right: 10px;
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Episodes</h1>
+    <h1>Season 5 Episodes</h1>
     <ul id="episode-list">
-        <li>Loading episodes...</li>
+        <!-- Episodes will be loaded here -->
     </ul>
 
     <!-- Firebase SDK -->
@@ -29,7 +39,7 @@
         // ✅ Reference to episodes
         const episodeList = document.getElementById("episode-list");
 
-        get(ref(db, "episodes")).then(snapshot => {
+        get(ref(db, "episodes/season5")).then(snapshot => {
             console.log("📌 Fetched Data:", snapshot.val()); // Debugging Log
 
             // ✅ If data exists, display episodes
@@ -40,7 +50,7 @@
                     console.log("🎬 Episode:", child.key, episode); // Debugging Log
 
                     let li = document.createElement("li");
-                    li.innerHTML = `<a href="episode.html?id=${child.key}">${episode.title}</a>`;
+                    li.innerHTML = `<a href="episode.html?id=${child.key}">Episode ${child.key}</a>`;
                     episodeList.appendChild(li);
                 });
             } else {
