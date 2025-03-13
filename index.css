@@ -12,7 +12,7 @@ body {
 
 .header-text {
     font-weight: bold;
-    font-size: 9px; /* Reduced the size */
+    font-size: 9px;
     margin-right: 10px;
     color: white;
 }
@@ -27,14 +27,15 @@ body {
 
 #episode-list li {
     margin: 5px;
-    font-size: 6px; /* Adjusted the font size */
+    font-size: 6px;
 }
 
 #episode-list li a {
     display: block;
-    padding: 3px 10px; /* Adjusted the padding */
-    background-color: red; /* Added red background color */
-    border-radius: 15px; /* More rounded corners */
-    color: white; /* Added text color */
-    text-align: center; /* Center aligned text */
+    padding: 3px 10px;
+    background-color: red;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
 }
