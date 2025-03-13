@@ -61,7 +61,8 @@ body {
     width: 60px; 
     margin: 0; 
     font-size: 12px;
-    padding-left: 0; 
+    padding-right: 10;
+    padding-left: 9;     
 }
 
 #episode-list li a {
