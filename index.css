@@ -12,7 +12,7 @@ body {
 
 .header-text {
     font-weight: bold;
-    font-size: 9px;
+    font-size: 12px;
     margin-right: 10px;
     color: white;
 }
@@ -33,6 +33,7 @@ body {
 #episode-list li a {
     display: block;
     padding: 7px 20px;
+    margin-right: 2px;
     background-color: #303030;
     border-radius: 15px;
     color: white;
