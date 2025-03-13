@@ -12,17 +12,19 @@ body {
 
 /* Main Container for the Entire Layout */
 .main-container {
-    width: 640px; /* Adjusted for thumbnail display */
+    max-width: 640px; /* Responsive width, max 640px */
+    width: 100%; /* Full width up to max */
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Removed box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
 }
 
 /* Cover Image Styling */
 .cover-image {
-    width: 640px; /* Half of 1280px */
-    height: 360px; /* Half of 720px, maintaining 16:9 aspect ratio */
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 360px; /* Max height to fit thumbnail aspect */
     object-fit: cover; /* Ensures the image fits without distortion */
     display: block;
 }
@@ -51,18 +53,18 @@ body {
 }
 
 #episode-list {
-    display: flex;
-    flex-wrap: wrap; /* Still using wrap to allow items to flow */
+    display: grid; /* Use grid for horizontal alignment */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive columns */
     list-style: none;
     padding: 0;
     justify-content: center;
-    position: relative;
+    gap: 10px; /* Space between items */
 }
 
 #episode-list li {
-    margin: 5px;
+    margin: 0; /* Reset margin for grid control */
     font-size: 12px;
-    position: relative; /* For random positioning */
+    position: relative; /* For vertical positioning */
 }
 
 #episode-list li a {
@@ -73,4 +75,17 @@ body {
     color: white;
     text-align: center;
     text-decoration: none;
+}
+
+/* Responsive Design for PC */
+@media (min-width: 1024px) {
+    .main-container {
+        max-width: 800px; /* Larger max-width for PC */
+    }
+    .cover-image {
+        max-height: 450px; /* Slightly larger thumbnail on PC */
+    }
+    #episode-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Wider columns on PC */
+    }
 }
