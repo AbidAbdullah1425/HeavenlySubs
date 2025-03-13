@@ -24,7 +24,7 @@ get(ref(db, "episodes/season5")).then(snapshot => {
 
         episodes.forEach(episode => {
             let li = document.createElement("li");
-            li.innerHTML = `<a href="episode.html?id=${episode.key}">Episode ${episode.key}</a>`;
+            li.innerHTML = `<a href="episode.html?id=${episode.key}">${episode.key}</a>`;
             episodeList.appendChild(li);
         });
     } else {
