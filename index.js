@@ -28,22 +28,20 @@ get(ref(db, "episodes/season5")).then(snapshot => {
         // Sort episodes in descending order by key
         episodes.sort((a, b) => b.key - a.key);
 
-        // Group episodes into rows
-        episodes.forEach((episode, index) => {
-            let li = document.createElement("li");
-            li.innerHTML = `<a href="episode.html?id=${episode.key}">${episode.key}</a>`;
-            
-            // Add class based on the number of digits
-            if (episode.key < 10) {
-                li.classList.add("one-digit");
-            } else if (episode.key < 100) {
-                li.classList.add("two-digit");
-            } else {
-                li.classList.add("three-digit");
+        // Group episodes into rows with random number of items per row
+        let currentItem = 0;
+        while (currentItem < episodes.length) {
+            const row = document.createElement("div");
+            row.classList.add("row");
+            const itemsInRow = Math.floor(Math.random() * 3) + 3; // Random number between 3 and 5
+            for (let i = 0; i < itemsInRow && currentItem < episodes.length; i++, currentItem++) {
+                const episode = episodes[currentItem];
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="episode.html?id=${episode.key}">${episode.key}</a>`;
+                row.appendChild(li);
             }
-
-            episodeList.appendChild(li);
-        });
+            episodeList.appendChild(row);
+        }
     } else {
         episodeList.innerHTML = "<li>No episodes found.</li>";
     }
