@@ -35,14 +35,33 @@ get(ref(db, "episodes/season5")).then(snapshot => {
             episodeList.appendChild(li);
         });
 
-        // Apply randomization to list items
+        // Apply vertical randomization without overlap
         const listItems = document.querySelectorAll('#episode-list li');
-        listItems.forEach(item => {
-            // Generate random margins for a staggered effect
-            const randomLeft = Math.random() * 20 - 10; // Random offset between -10px and 10px
-            const randomTop = Math.random() * 20 - 10; // Random offset between -10px and 10px
-            item.style.marginLeft = `${randomLeft}px`;
-            item.style.marginTop = `${randomTop}px`;
+        const itemHeight = 40; // Approximate height of each li (adjust based on your design)
+        let usedPositions = new Set();
+
+        listItems.forEach((item, index) => {
+            let randomTop;
+            let attempts = 0;
+            const maxAttempts = 10;
+
+            do {
+                randomTop = Math.random() * 100; // Random vertical offset up to 100px
+                attempts++;
+                // Ensure position is not too close to others (simple check)
+                const positionKey = Math.floor(randomTop / itemHeight);
+                if (!usedPositions.has(positionKey) && randomTop >= 0 && randomTop <= 100) {
+                    usedPositions.add(positionKey);
+                    break;
+                }
+            } while (attempts < maxAttempts);
+
+            if (attempts === maxAttempts) {
+                randomTop = index * itemHeight; // Fallback to basic stacking if no unique position found
+            }
+
+            item.style.position = 'relative';
+            item.style.top = `${randomTop}px`;
         });
     } else {
         episodeList.innerHTML = "<li>No episodes found.</li>";
