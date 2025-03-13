@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: #191919
 }
 
 .header {
@@ -33,7 +33,7 @@ body {
 #episode-list li a {
     display: block;
     padding: 3px 10px; /* Adjusted the padding */
-    background-color: 8A8383; /* Added red background color */
+    background-color: #8A8383; /* Added red background color */
     border-radius: 15px; /* More rounded corners */
     color: white; /* Added text color */
     text-align: center; /* Center aligned text */
