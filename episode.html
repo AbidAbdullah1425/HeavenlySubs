@@ -25,7 +25,7 @@
         const episodeId = params.get("id");
 
         if (episodeId) {
-            get(ref(db, "episodes/" + episodeId)).then(snapshot => {
+            get(ref(db, "episodes/season5/" + episodeId)).then(snapshot => {
                 if (snapshot.exists()) {
                     let episode = snapshot.val();
                     document.getElementById("episode-title").innerText = episode.title;
