@@ -65,28 +65,23 @@ body {
 
 #episode-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
-    justify-content: space-around; /* Distribute items evenly */
     gap: 10px; 
     padding: 0 20px;
 }
 
+.row {
+    display: flex;
+    justify-content: center; /* Center items in the row */
+    gap: 10px; /* Space between items */
+}
+
 #episode-list li {
+    width: 60px; 
     margin: 0; 
     font-size: 12px;        
-}
-
-#episode-list li.one-digit {
-    width: 40px; /* Smaller width for one-digit items */
-}
-
-#episode-list li.two-digit {
-    width: 60px; /* Default width for two-digit items */
-}
-
-#episode-list li.three-digit {
-    width: 80px; /* Larger width for three-digit items */
 }
 
 #episode-list li a {
@@ -109,9 +104,6 @@ body {
     }
     #episode-list {
         justify-content: center; /* Center items on larger screens */
-    }
-    #episode-list li {
-        /* No change to width */
     }
 }
 
