@@ -73,9 +73,20 @@ body {
 }
 
 #episode-list li {
-    width: 60px; 
     margin: 0; 
     font-size: 12px;        
+}
+
+#episode-list li.one-digit {
+    width: 40px; /* Smaller width for one-digit items */
+}
+
+#episode-list li.two-digit {
+    width: 60px; /* Default width for two-digit items */
+}
+
+#episode-list li.three-digit {
+    width: 80px; /* Larger width for three-digit items */
 }
 
 #episode-list li a {
