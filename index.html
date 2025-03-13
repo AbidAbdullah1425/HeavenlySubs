@@ -4,63 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Episodes</title>
-    <style>
-        #episode-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        #episode-list li {
-            margin-right: 10px;
-            list-style: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Season 5 Episodes</h1>
-    <ul id="episode-list">
-        <!-- Episodes will be loaded here -->
-    </ul>
-
-    <!-- Firebase SDK -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-
-        // ✅ Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyDsIeABdHyO_J9jOiY5m-P33kDEy_47zYI",
-            databaseURL: "https://heavenlysubs-7beba-default-rtdb.firebaseio.com"
-        };
-
-        // ✅ Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        
-        // ✅ Reference to episodes
-        const episodeList = document.getElementById("episode-list");
-
-        get(ref(db, "episodes/season5")).then(snapshot => {
-            console.log("📌 Fetched Data:", snapshot.val()); // Debugging Log
-
-            // ✅ If data exists, display episodes
-            if (snapshot.exists()) {
-                episodeList.innerHTML = ""; // Clear "Loading" text
-                snapshot.forEach(child => {
-                    let episode = child.val();
-                    console.log("🎬 Episode:", child.key, episode); // Debugging Log
-
-                    let li = document.createElement("li");
-                    li.innerHTML = `<a href="episode.html?id=${child.key}">Episode ${child.key}</a>`;
-                    episodeList.appendChild(li);
-                });
-            } else {
-                console.warn("⚠ No episodes found.");
-                episodeList.innerHTML = "<li>No episodes found.</li>";
-            }
-        }).catch(error => {
-            console.error("❌ Firebase Error:", error);
-            episodeList.innerHTML = "<li>Error loading episodes.</li>";
-        });
-    </script>
+    <ul id="episode-list"></ul>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
