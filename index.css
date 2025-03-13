@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: black;
 }
 
 .header {
@@ -13,6 +14,7 @@ body {
     font-weight: bold;
     font-size: 9px; /* Reduced the size */
     margin-right: 10px;
+    color: white;
 }
 
 #episode-list {
@@ -33,6 +35,6 @@ body {
     padding: 3px 10px; /* Adjusted the padding */
     background-color: red; /* Added red background color */
     border-radius: 15px; /* More rounded corners */
-    color: white; /* Added text color */
+    color: grey; /* Added text color */
     text-align: center; /* Center aligned text */
 }
