@@ -28,35 +28,20 @@ get(ref(db, "episodes/season5")).then(snapshot => {
         // Sort episodes in descending order by key
         episodes.sort((a, b) => b.key - a.key);
 
-        // Define the number of items per row
-        const itemsPerRow = [5, 3, 4]; // 2nd row: 5 items, 3rd row: 3 items, 4th row: 4 items
-        let currentIndex = 0;
-
         // Group episodes into rows
         episodes.forEach((episode, index) => {
             let li = document.createElement("li");
             li.innerHTML = `<a href="episode.html?id=${episode.key}">${episode.key}</a>`;
-
-            // Determine which row this item belongs to
-            let rowIndex = 0;
-            let itemsBefore = 0;
-            for (let i = 0; i < itemsPerRow.length; i++) {
-                itemsBefore += itemsPerRow[i];
-                if (index < itemsBefore) {
-                    rowIndex = i;
-                    break;
-                }
-            }
-            // If beyond defined rows, repeat the pattern
-            if (index >= itemsBefore) {
-                rowIndex = (index - itemsBefore) % itemsPerRow.length;
+            
+            // Add class based on the number of digits
+            if (episode.key < 10) {
+                li.classList.add("one-digit");
+            } else if (episode.key < 100) {
+                li.classList.add("two-digit");
+            } else {
+                li.classList.add("three-digit");
             }
 
-            // Apply random left padding for natural variation (0px to 3px)
-            const randomPadding = Math.floor(Math.random() * 4); // Random padding between 0px and 3px
-            li.style.paddingLeft = `${randomPadding}px`;
-
-            // No need to set flex width since CSS handles fixed width
             episodeList.appendChild(li);
         });
     } else {
