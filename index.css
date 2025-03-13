@@ -11,7 +11,7 @@ body {
 
 .header-text {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px; /* Reduced the size */
     margin-right: 10px;
 }
 
@@ -25,9 +25,14 @@ body {
 
 #episode-list li {
     margin: 5px;
-    font-size: 14px;
+    font-size: 12px; /* Adjusted the font size */
 }
 
 #episode-list li a {
     display: block;
-    padding: 7px 5px;
+    padding: 5px 7px; /* Adjusted the padding */
+    background-color: red; /* Added red background color */
+    border-radius: 10px; /* Added rounded corners */
+    color: white; /* Added text color */
+    text-align: center; /* Center aligned text */
+}
