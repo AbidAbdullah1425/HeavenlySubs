@@ -73,8 +73,8 @@ body {
 }
 
 #episode-list li {
-    flex: 1 1 auto; /* Allow items to grow and shrink */
-    margin: 0 5px; 
+    width: 60px; 
+    margin: 0; 
     font-size: 12px;        
 }
 
@@ -100,7 +100,7 @@ body {
         justify-content: center; /* Center items on larger screens */
     }
     #episode-list li {
-        width: 100px; /* Increase item width on larger screens */
+        /* No change to width */
     }
 }
 
