@@ -27,12 +27,12 @@ body {
 
 #episode-list li {
     margin: 5px;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 #episode-list li a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 16px;
     background-color: #303030;
     border-radius: 15px;
     color: white;
