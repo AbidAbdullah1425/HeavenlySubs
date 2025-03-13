@@ -39,3 +39,8 @@ body {
     text-align: center;
     text-decoration: none;
 }
+
+
+ul li a.clicked {
+    color: white;
+    background-color: #333;
