@@ -52,14 +52,11 @@ get(ref(db, "episodes/season5")).then(snapshot => {
                 rowIndex = (index - itemsBefore) % itemsPerRow.length;
             }
 
-            // Apply random left padding for natural variation
-            const randomPadding = Math.floor(Math.random() * 10) + 2; // Random padding between 2px and 11px
+            // Apply random left padding for natural variation (0px to 3px)
+            const randomPadding = Math.floor(Math.random() * 4); // Random padding between 0px and 3px
             li.style.paddingLeft = `${randomPadding}px`;
 
-            // Set width to ensure consistent spacing
-            const itemsInThisRow = itemsPerRow[rowIndex];
-            li.style.flex = `0 0 ${100 / itemsInThisRow - 2}%`; // Adjust width based on number of items in row
-
+            // No need to set flex width since CSS handles fixed width
             episodeList.appendChild(li);
         });
     } else {
