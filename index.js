@@ -33,3 +33,17 @@ get(ref(db, "episodes/season5")).then(snapshot => {
 }).catch(error => {
     episodeList.innerHTML = "<li>Error loading episodes.</li>";
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll("ul li a");
+
+    items.forEach(item => {
+        item.addEventListener("click", function () {
+            // Remove 'clicked' class from all items
+            items.forEach(i => i.classList.remove("clicked"));
+            // Add 'clicked' class to the clicked item
+            this.classList.add("clicked");
+        });
+    });
+});
