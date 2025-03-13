@@ -1,41 +1,39 @@
-/* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #191919; /* Your original background color */
+    background-color: #191919;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding-top: 20px;
+    padding-top: 1px;
 }
 
-/* Main Container for the Entire Layout */
 .main-container {
-    max-width: 480px; /* Smaller max width for better fit */
-    width: 100%; /* Full width up to max */
-    border-radius: 10px; /* Keep the rounded corners */
+    max-width: 480px; 
+    width: 100%; 
+    border-radius: 10px; 
 }
 
-/* Cover Image Styling */
+
 .cover-image {
-    width: 100%; /* Responsive width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 270px; /* Smaller thumbnail (16:9 ratio, 480x270px) */
-    object-fit: cover; /* Ensures the image fits without distortion */
+    width: 100%; 
+    height: auto; 
+    max-height: 270px; 
+    object-fit: cover; 
     display: block;
     border-radius: 10px 10px 0 0; /* Match container corners */
 }
 
-/* Episode Container Styling */
+
 .episode-container {
-    padding: 20px 0; /* Centered padding */
+    padding: 20px 0; 
     color: #fff;
     width: 100%;
     text-align: center;
 }
 
-/* Episode List Styles */
+
 .header {
     display: flex;
     justify-content: center;
@@ -52,35 +50,35 @@ body {
 
 #episode-list {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap into rows */
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     justify-content: center;
-    gap: 10px; /* Space between items */
+    gap: 10px; 
 }
 
 #episode-list li {
-    width: 60px; /* Fixed width for all items */
-    margin: 0; /* Reset margin for controlled spacing */
+    width: 60px; 
+    margin: 0; 
     font-size: 12px;
-    padding-left: 0; /* Base padding, will be randomized in JS */
+    padding-left: 0; 
 }
 
 #episode-list li a {
     display: block;
-    padding: 7px 0; /* Adjusted padding to fit fixed width */
+    padding: 7px 0; 
     background-color: #303030;
     border-radius: 15px;
     color: white;
     text-align: center;
     text-decoration: none;
-    width: 100%; /* Ensure link fills the li */
+    width: 100%; 
 }
 
-/* Responsive Design for PC */
+
 @media (min-width: 1024px) {
     .main-container {
-        max-width: 600px; /* Slightly larger for PC */
+        max-width: 600px; 
     }
     .cover-image {
         max-height: 337.5px; /* 16:9 ratio, 600x337.5px */
