@@ -65,18 +65,11 @@ body {
 
 #episode-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     list-style: none;
+    justify-content: center;
     gap: 10px; 
     padding: 0 20px;
-}
-
-.row {
-    display: flex;
-    justify-content: flex-start; /* Changed to flex-start for proper alignment */
-    align-items: center; /* Ensure vertical alignment */
-    gap: 10px; /* Space between items */
 }
 
 #episode-list li {
@@ -87,30 +80,4 @@ body {
 
 #episode-list li a {
     display: block;
-    padding: 7px 0; 
-    background-color: #303030;
-    border-radius: 15px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .main-container {
-        max-width: 600px; 
-    }
-    .cover-image {
-        max-height: 337.5px; 
-    }
-    #episode-list {
-        justify-content: center; /* Center items on larger screens */
-    }
-}
-
-.divider {
-    width: 80%; 
-    height: 2px;
-    background: linear-gradient(to right, transparent, #555, transparent);
-    margin: 20px auto; 
-}
+    padding: 7px 
