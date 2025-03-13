@@ -1,1 +1,9 @@
-g
+#episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+#episode-list li {
+    margin-right: 10px;
+}
