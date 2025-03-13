@@ -52,11 +52,9 @@ get(ref(db, "episodes/season5")).then(snapshot => {
                 rowIndex = (index - itemsBefore) % itemsPerRow.length;
             }
 
-            // Apply slight randomization within the row
-            const randomOffset = Math.random() * 10 - 5; // Small offset (-5px to 5px)
-            li.style.position = 'relative';
-            li.style.top = `${randomOffset}px`; // Slight vertical randomization
-            li.style.left = `${randomOffset}px`; // Slight horizontal randomization
+            // Apply random left padding for natural variation
+            const randomPadding = Math.floor(Math.random() * 10) + 2; // Random padding between 2px and 11px
+            li.style.paddingLeft = `${randomPadding}px`;
 
             // Set width to ensure consistent spacing
             const itemsInThisRow = itemsPerRow[rowIndex];
