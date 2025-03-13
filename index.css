@@ -33,8 +33,8 @@ body {
 #episode-list li a {
     display: block;
     padding: 3px 10px; /* Adjusted the padding */
-    background-color: red; /* Added red background color */
+    background-color: grey; /* Added red background color */
     border-radius: 15px; /* More rounded corners */
-    color: grey; /* Added text color */
+    color: white; /* Added text color */
     text-align: center; /* Center aligned text */
 }
