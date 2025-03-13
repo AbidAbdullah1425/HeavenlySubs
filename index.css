@@ -1,7 +1,7 @@
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #191919; /* Reverted to your original background color */
+    background-color: #191919; /* Your original background color */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -12,11 +12,19 @@ body {
 
 /* Main Container for the Entire Layout */
 .main-container {
-    width: 1280px; /* Matches YouTube thumbnail width */
+    width: 640px; /* Adjusted for thumbnail display */
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Cover Image Styling */
+.cover-image {
+    width: 640px; /* Half of 1280px */
+    height: 360px; /* Half of 720px, maintaining 16:9 aspect ratio */
+    object-fit: cover; /* Ensures the image fits without distortion */
+    display: block;
 }
 
 /* Episode Container Styling */
@@ -24,10 +32,10 @@ body {
     padding: 20px 0; /* Centered padding */
     color: #fff;
     width: 100%;
-    text-align: center; /* Center the episode list */
+    text-align: center;
 }
 
-/* Your Original Styles for the Episode List */
+/* Episode List Styles */
 .header {
     display: flex;
     justify-content: center;
@@ -44,32 +52,25 @@ body {
 
 #episode-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Still using wrap to allow items to flow */
     list-style: none;
     padding: 0;
-    justify-content: center; /* Center the list */
+    justify-content: center;
+    position: relative;
 }
 
 #episode-list li {
     margin: 5px;
     font-size: 12px;
+    position: relative; /* For random positioning */
 }
 
 #episode-list li a {
     display: block;
     padding: 7px 20px;
-    margin-left: 2px;
     background-color: #303030;
     border-radius: 15px;
     color: white;
     text-align: center;
     text-decoration: none;
-}
-
-/* Cover Image Styling */
-.cover-image {
-    width: 1280px;
-    height: 720px;
-    object-fit: cover; /* Ensures the image fits without distortion */
-    display: block;
 }
