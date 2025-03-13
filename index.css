@@ -11,7 +11,7 @@ body {
 
 .header-text {
     font-weight: bold;
-    font-size: 16px; /* Reduced the size */
+    font-size: 9px; /* Reduced the size */
     margin-right: 10px;
 }
 
@@ -25,7 +25,7 @@ body {
 
 #episode-list li {
     margin: 5px;
-    font-size: 12px; /* Adjusted the font size */
+    font-size: 6px; /* Adjusted the font size */
 }
 
 #episode-list li a {
