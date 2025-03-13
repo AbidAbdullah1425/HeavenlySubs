@@ -83,3 +83,10 @@ body {
         max-height: 337.5px; /* 16:9 ratio, 600x337.5px */
     }
 }
+
+.divider {
+    width: 80%; /* Slightly smaller than full width */
+    height: 2px;
+    background: linear-gradient(to right, transparent, #555, transparent);
+    margin: 20px auto; /* Center the divider */
+}
