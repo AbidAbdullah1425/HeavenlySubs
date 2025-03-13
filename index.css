@@ -1,10 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-text {
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
 #episode-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
+    justify-content: center;
 }
+
 #episode-list li {
-    margin-right: 2px;
-    font-size: 7px;
+    margin: 5px;
+    font-size: 14px;
 }
+
+#episode-list li a {
+    display: block;
+    padding: 7px 5px;
