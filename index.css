@@ -15,7 +15,6 @@ body {
     max-width: 480px; /* Smaller max width for better fit */
     width: 100%; /* Full width up to max */
     border-radius: 10px; /* Keep the rounded corners */
-    /* Removed background: rgba(0, 0, 0, 0.7); */
 }
 
 /* Cover Image Styling */
@@ -64,7 +63,7 @@ body {
     flex: 0 0 auto; /* Prevent items from growing/shrinking */
     margin: 0; /* Reset margin for controlled spacing */
     font-size: 12px;
-    position: relative; /* For slight randomization */
+    padding-left: 0; /* Base padding, will be randomized in JS */
 }
 
 #episode-list li a {
