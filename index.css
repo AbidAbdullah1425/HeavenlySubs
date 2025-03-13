@@ -65,3 +65,11 @@ body {
     text-align: center;
     text-decoration: none;
 }
+
+/* Cover Image Styling */
+.cover-image {
+    width: 1280px;
+    height: 720px;
+    object-fit: cover; /* Ensures the image fits without distortion */
+    display: block;
+}
