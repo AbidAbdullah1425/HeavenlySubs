@@ -33,7 +33,7 @@ body {
 #episode-list li a {
     display: block;
     padding: 3px 10px;
-    background-color: red;
+    background-color: #303030;
     border-radius: 15px;
     color: white;
     text-align: center;
