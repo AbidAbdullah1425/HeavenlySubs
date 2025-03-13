@@ -98,7 +98,7 @@ body {
         max-width: 600px; 
     }
     .cover-image {
-        max-height: 337.5px; /* 16:9 ratio, 600x337.5px */
+        max-height: 337.5px; 
     }
 }
 
