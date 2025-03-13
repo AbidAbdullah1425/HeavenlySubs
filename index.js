@@ -47,3 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.body.classList.add("loaded");
+    }, 1000); // Simulating loading delay
+});
