@@ -60,7 +60,7 @@ body {
 }
 
 #episode-list li {
-    flex: 0 0 auto; /* Prevent items from growing/shrinking */
+    width: 60px; /* Fixed width for all items */
     margin: 0; /* Reset margin for controlled spacing */
     font-size: 12px;
     padding-left: 0; /* Base padding, will be randomized in JS */
@@ -68,12 +68,13 @@ body {
 
 #episode-list li a {
     display: block;
-    padding: 7px 20px;
+    padding: 7px 0; /* Adjusted padding to fit fixed width */
     background-color: #303030;
     border-radius: 15px;
     color: white;
     text-align: center;
     text-decoration: none;
+    width: 100%; /* Ensure link fills the li */
 }
 
 /* Responsive Design for PC */
