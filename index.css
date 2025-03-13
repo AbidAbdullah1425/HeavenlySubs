@@ -74,7 +74,8 @@ body {
 
 .row {
     display: flex;
-    justify-content: center; /* Center items in the row */
+    justify-content: flex-start; /* Changed to flex-start for proper alignment */
+    align-items: center; /* Ensure vertical alignment */
     gap: 10px; /* Space between items */
 }
 
