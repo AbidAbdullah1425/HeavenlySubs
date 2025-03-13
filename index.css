@@ -52,11 +52,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    padding: 0;
     justify-content: center;
     gap: 10px; 
-    padding-right: 20;
-    padding-left: 19;
+    #episode-list {
+    padding: 0 20px;
 }
 
 #episode-list li {
