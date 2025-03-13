@@ -15,37 +15,33 @@ body {
     border-radius: 10px; 
 }
 
-/* Cover Wrapper for Fade Effect */
 .cover-wrapper {
     position: relative;
     width: 100%;
     max-width: 480px;
-    overflow: hidden; /* Prevents extra space */
+    overflow: hidden; 
 }
 
-/* Cover Image */
 .cover-image {
     width: 100%; 
     height: auto; 
     max-height: 270px; 
     object-fit: cover; 
     display: block;
-    border-radius: 10px 10px 0 0; /* Match container corners */
+    border-radius: 10px 10px 0 0; 
 }
 
-/* Fade Effect */
 .cover-wrapper::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px; /* Increase for smoother fade */
+    height: 120px; 
     background: linear-gradient(to bottom, rgba(25, 25, 25, 0) 40%, #191919 100%);
     pointer-events: none;
 }
 
-/* Episode List */
 .episode-container {
     padding: 20px 0; 
     color: #fff;
@@ -53,7 +49,6 @@ body {
     text-align: center;
 }
 
-/* Header */
 .header {
     display: flex;
     justify-content: center;
@@ -68,19 +63,18 @@ body {
     color: white;
 }
 
-/* Episode List */
 #episode-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    justify-content: center;
+    justify-content: space-around; /* Distribute items evenly */
     gap: 10px; 
     padding: 0 20px;
 }
 
 #episode-list li {
-    width: 60px; 
-    margin: 0; 
+    flex: 1 1 auto; /* Allow items to grow and shrink */
+    margin: 0 5px; 
     font-size: 12px;        
 }
 
@@ -95,20 +89,24 @@ body {
     width: 100%;
 }
 
-/* Responsive Design */
 @media (min-width: 1024px) {
     .main-container {
         max-width: 600px; 
     }
     .cover-image {
-        max-height: 337.5px; /* 16:9 ratio, 600x337.5px */
+        max-height: 337.5px; 
+    }
+    #episode-list {
+        justify-content: center; /* Center items on larger screens */
+    }
+    #episode-list li {
+        width: 100px; /* Increase item width on larger screens */
     }
 }
 
-/* Divider */
 .divider {
-    width: 80%; /* Slightly smaller than full width */
+    width: 80%; 
     height: 2px;
     background: linear-gradient(to right, transparent, #555, transparent);
-    margin: 20px auto; /* Center the divider */
+    margin: 20px auto; 
 }
