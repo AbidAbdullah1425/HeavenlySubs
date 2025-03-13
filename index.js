@@ -28,40 +28,41 @@ get(ref(db, "episodes/season5")).then(snapshot => {
         // Sort episodes in descending order by key
         episodes.sort((a, b) => b.key - a.key);
 
-        // Populate the list
-        episodes.forEach(episode => {
+        // Define the number of items per row
+        const itemsPerRow = [5, 3, 4]; // 2nd row: 5 items, 3rd row: 3 items, 4th row: 4 items
+        let currentIndex = 0;
+
+        // Group episodes into rows
+        episodes.forEach((episode, index) => {
             let li = document.createElement("li");
             li.innerHTML = `<a href="episode.html?id=${episode.key}">${episode.key}</a>`;
-            episodeList.appendChild(li);
-        });
 
-        // Apply vertical randomization without overlap
-        const listItems = document.querySelectorAll('#episode-list li');
-        const itemHeight = 40; // Approximate height of each li (adjust based on your design)
-        let usedPositions = new Set();
-
-        listItems.forEach((item, index) => {
-            let randomTop;
-            let attempts = 0;
-            const maxAttempts = 10;
-
-            do {
-                randomTop = Math.random() * 100; // Random vertical offset up to 100px
-                attempts++;
-                // Ensure position is not too close to others (simple check)
-                const positionKey = Math.floor(randomTop / itemHeight);
-                if (!usedPositions.has(positionKey) && randomTop >= 0 && randomTop <= 100) {
-                    usedPositions.add(positionKey);
+            // Determine which row this item belongs to
+            let rowIndex = 0;
+            let itemsBefore = 0;
+            for (let i = 0; i < itemsPerRow.length; i++) {
+                itemsBefore += itemsPerRow[i];
+                if (index < itemsBefore) {
+                    rowIndex = i;
                     break;
                 }
-            } while (attempts < maxAttempts);
-
-            if (attempts === maxAttempts) {
-                randomTop = index * itemHeight; // Fallback to basic stacking if no unique position found
+            }
+            // If beyond defined rows, repeat the pattern
+            if (index >= itemsBefore) {
+                rowIndex = (index - itemsBefore) % itemsPerRow.length;
             }
 
-            item.style.position = 'relative';
-            item.style.top = `${randomTop}px`;
+            // Apply slight randomization within the row
+            const randomOffset = Math.random() * 10 - 5; // Small offset (-5px to 5px)
+            li.style.position = 'relative';
+            li.style.top = `${randomOffset}px`; // Slight vertical randomization
+            li.style.left = `${randomOffset}px`; // Slight horizontal randomization
+
+            // Set width to ensure consistent spacing
+            const itemsInThisRow = itemsPerRow[rowIndex];
+            li.style.flex = `0 0 ${100 / itemsInThisRow - 2}%`; // Adjust width based on number of items in row
+
+            episodeList.appendChild(li);
         });
     } else {
         episodeList.innerHTML = "<li>No episodes found.</li>";
