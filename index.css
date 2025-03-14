@@ -64,24 +64,29 @@ body {
 }
 
 #episode-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the list */
+    gap: 10px;
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 auto; /* Center the list */
 }
 
 #episode-list li {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    border: 1px solid #d1d1d1;
+    width: 60px;
+    margin: 5px; /* Add some margin */
+    font-size: 12px;
 }
 
 #episode-list li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    display: block;
+    padding: 7px;
+    background-color: #cc0000; /* Darkish red background color */
+    border-radius: 15px; /* Rounded corners */
+    color: white;
+    text-align: center;
+    width: 100%;
 }
 
 .divider {
