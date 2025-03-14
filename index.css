@@ -81,11 +81,11 @@ body {
 #episode-list li a {
     display: block;
     padding: 7px;
-    background-color: #ff0000; /* Red background color */
-    border-radius: 15px; /* Rounded corners */
-    color: white;
+    background-color: #ff0000 !important; /* Red background color */
+    border-radius: 15px !important; /* Rounded corners */
+    color: white !important;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     width: 100%;
 }
 
