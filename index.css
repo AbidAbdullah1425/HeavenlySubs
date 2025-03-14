@@ -75,8 +75,10 @@ body {
 
 #episode-list li {
     width: 45px;
-    margin: 5px; /* Add some margin */
+    margin: 5px;
     font-size: 12px;
+    display: inline-block;
+    padding: 5px;
 }
 
 #episode-list li a {
