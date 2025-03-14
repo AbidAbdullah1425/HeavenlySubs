@@ -47,22 +47,36 @@ function arrangeEpisodes(episodes) {
             let rowDiv = document.createElement("div");
             rowDiv.style.display = "flex";
             rowDiv.style.justifyContent = "center";
-            rowDiv.style.gap = "10px";
+            rowDiv.style.gap = "8px";  // Keeps spacing between buttons
             rowDiv.style.marginBottom = "10px";
-
+            rowDiv.style.flexWrap = "wrap";  // Prevents breaking outside screen
+            rowDiv.style.maxWidth = "100%";  // Keeps within container
+            
             for (let i = 0; i < itemsInRow; i++) {
                 if (index >= episodes.length) break;
-                let li = document.createElement("li");
-                li.innerHTML = `<a href="episode.html?id=${episodes[index].key}">${episodes[index].key}</a>`;
-                li.style.padding = "7px";
-                li.style.backgroundColor = "#cc0000";
-                li.style.borderRadius = "15px";
-                li.style.color = "white";
-                li.style.textAlign = "center";
-                li.style.minWidth = "40px";
-                li.style.display = "inline-block";
 
+                let li = document.createElement("li");
+                let anchor = document.createElement("a");
+
+                anchor.href = `episode.html?id=${episodes[index].key}`;
+                anchor.innerText = episodes[index].key;
+                anchor.style.display = "flex";
+                anchor.style.alignItems = "center";
+                anchor.style.justifyContent = "center";
+                anchor.style.width = "40px";  // Fixed width to keep uniform size
+                anchor.style.height = "40px"; // Fixed height to maintain shape
+                anchor.style.padding = "5px";
+                anchor.style.backgroundColor = "#cc0000";
+                anchor.style.borderRadius = "50%";  // Keeps the rounded button shape
+                anchor.style.color = "white";
+                anchor.style.textAlign = "center";
+                anchor.style.textDecoration = "none";
+                anchor.style.fontSize = "14px";
+
+                li.style.listStyle = "none";
+                li.appendChild(anchor);
                 rowDiv.appendChild(li);
+                
                 index++;
             }
             episodeList.appendChild(rowDiv);
