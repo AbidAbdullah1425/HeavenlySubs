@@ -74,24 +74,24 @@ body {
 
 #episode-list li {
     width: 60px;
-    margin: 0;
+    margin: 5px; /* Add some margin */
     font-size: 12px;
 }
 
 #episode-list li a {
     display: block;
     padding: 7px;
-    background-color: #ff0000 !important; /* Red background color */
-    border-radius: 15px !important; /* Rounded corners */
-    color: white !important;
+    background-color: #cc0000; /* Darkish red background color */
+    border-radius: 15px; /* Rounded corners */
+    color: white;
     text-align: center;
-    text-decoration: none !important;
+    text-decoration: none;
     width: 100%;
 }
 
 .divider {
     height: 2px;
-    background-color: #fff;
+    background: linear-gradient(to right, rgba(25, 25, 25, 0), #fff, rgba(25, 25, 25, 0)); /* Fade from left and right */
     margin: 20px 0;
 }
 
