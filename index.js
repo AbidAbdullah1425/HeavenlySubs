@@ -28,51 +28,15 @@ get(ref(db, "episodes/season5")).then(snapshot => {
         // Sort episodes in descending order by key
         episodes.sort((a, b) => b.key - a.key);
 
-        // Call function to arrange episodes dynamically
-        arrangeEpisodes(episodes);
+        // Display episodes in a single list
+        episodes.forEach(episode => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="episode.html?id=${episode.key}">${episode.key}</a>`;
+            episodeList.appendChild(li);
+        });
     } else {
         episodeList.innerHTML = "<li>No episodes found.</li>";
     }
 }).catch(error => {
     episodeList.innerHTML = "<li>Error loading episodes.</li>";
 });
-
-// Function to arrange episodes (exactly 3 per row)
-function arrangeEpisodes(episodes) {
-    let rowDiv = null;
-
-    episodes.forEach((episode, index) => {
-        if (index % 3 === 0) {
-            rowDiv = document.createElement("div");
-            rowDiv.style.display = "flex";
-            rowDiv.style.justifyContent = "center";
-            rowDiv.style.gap = "10px"; // Keeps spacing between buttons
-            rowDiv.style.marginBottom = "10px";
-            rowDiv.style.flexWrap = "nowrap"; // Prevents breaking rows
-            rowDiv.style.maxWidth = "100%"; // Ensures it stays inside container
-            episodeList.appendChild(rowDiv);
-        }
-
-        let li = document.createElement("li");
-        let anchor = document.createElement("a");
-
-        anchor.href = `episode.html?id=${episode.key}`;
-        anchor.innerText = episode.key;
-        anchor.style.display = "flex";
-        anchor.style.alignItems = "center";
-        anchor.style.justifyContent = "center";
-        anchor.style.width = "80px";  // Set fixed width
-        anchor.style.height = "35px"; // Set fixed height
-        anchor.style.padding = "5px";
-        anchor.style.backgroundColor = "#cc0000";
-        anchor.style.borderRadius = "15px";  // Keeps previous rounded rectangle shape
-        anchor.style.color = "white";
-        anchor.style.textAlign = "center";
-        anchor.style.textDecoration = "none";
-        anchor.style.fontSize = "14px";
-
-        li.style.listStyle = "none";
-        li.appendChild(anchor);
-        rowDiv.appendChild(li);
-    });
-}
