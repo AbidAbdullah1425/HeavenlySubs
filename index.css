@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #191919;
@@ -11,25 +10,25 @@ body {
 }
 
 .main-container {
-    max-width: 480px; 
-    width: 100%; 
-    border-radius: 10px; 
+    max-width: 480px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .cover-wrapper {
     position: relative;
     width: 100%;
     max-width: 480px;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .cover-image {
-    width: 100%; 
-    height: auto; 
-    max-height: 270px; 
-    object-fit: cover; 
+    width: 100%;
+    height: auto;
+    max-height: 270px;
+    object-fit: cover;
     display: block;
-    border-radius: 10px 10px 0 0; 
+    border-radius: 10px 10px 0 0;
 }
 
 .cover-wrapper::after {
@@ -38,13 +37,13 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px; 
+    height: 120px;
     background: linear-gradient(to bottom, rgba(25, 25, 25, 0) 40%, #191919 100%);
     pointer-events: none;
 }
 
 .episode-container {
-    padding: 20px 0; 
+    padding: 20px 0;
     color: #fff;
     width: 100%;
     text-align: center;
@@ -69,23 +68,35 @@ body {
     flex-wrap: wrap;
     list-style: none;
     justify-content: center;
-    gap: 10px; 
+    gap: 10px;
     padding: 0 20px;
 }
 
 #episode-list li {
-    width: 60px; 
-    margin: 0; 
-    font-size: 12px;        
+    width: 60px;
+    margin: 0;
+    font-size: 12px;
 }
 
 #episode-list li a {
     display: block;
-    padding: 7px 0; 
+    padding: 7px;
     background-color: #ff0000; /* Red background color */
     border-radius: 15px; /* Rounded corners */
     color: white;
     text-align: center;
     text-decoration: none;
     width: 100%;
+}
+
+.divider {
+    height: 2px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 0 10px;
+    }
 }
