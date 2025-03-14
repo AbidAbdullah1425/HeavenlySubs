@@ -77,19 +77,17 @@ body {
     width: 45px;
     margin: 5px;
     font-size: 12px;
-    display: inline-block;
-    padding: 5px;
 }
 
 #episode-list li a {
-    display: block;
-    padding: 7px;
     background-color: #cc0000; /* Darkish red background color */
     border-radius: 15px; /* Rounded corners */
     color: white;
     text-align: center;
     width: 100%;
     text-decoration: none;
+    display: inline-block;
+    padding: 5px;
 }
 
 .divider {
