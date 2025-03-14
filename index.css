@@ -74,7 +74,7 @@ body {
 }
 
 #episode-list li {
-    width: 60px;
+    width: 45px;
     margin: 5px; /* Add some margin */
     font-size: 12px;
 }
@@ -86,7 +86,7 @@ body {
     border-radius: 15px; /* Rounded corners */
     color: white;
     text-align: center;
-    width: 45px;
+    width: 100%;
     text-decoration: none;
 }
 
