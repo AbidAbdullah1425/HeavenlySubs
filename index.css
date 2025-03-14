@@ -66,10 +66,11 @@ body {
 #episode-list {
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
+    justify-content: center; /* Center the list */
     gap: 10px;
+    list-style: none;
     padding: 0 20px;
+    margin: 0 auto; /* Center the list */
 }
 
 #episode-list li {
