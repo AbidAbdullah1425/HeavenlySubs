@@ -91,12 +91,19 @@ body {
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
-/* Create the brick wall effect */
-#episode-list li:nth-child(odd) {
+/* Create the brick wall effect with line margin from left or right */
+#episode-list li {
+    display: inline-block;
+}
+
+/* Add margin to every alternate row */
+#episode-list li:nth-child(4n+1),
+#episode-list li:nth-child(4n+2) {
     margin-left: 20px;
 }
 
-#episode-list li:nth-child(even) {
+#episode-list li:nth-child(4n+3),
+#episode-list li:nth-child(4n+4) {
     margin-right: 20px;
 }
 
