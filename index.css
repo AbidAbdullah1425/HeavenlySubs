@@ -84,11 +84,13 @@ body {
     display: inline-block;
     padding: 10px 15px; /* Adjust padding to make it look like a button */
     background-color: #cc0000; /* Darkish red background color */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 20px; /* More rounded corners */
     color: white;
     text-align: center;
     text-decoration: none;
     white-space: nowrap; /* Prevent text from wrapping */
+    height: 20px; /* Adjust this value to change the height */
+    line-height: 40px; /* Center text vertically */
 }
 
 .divider {
