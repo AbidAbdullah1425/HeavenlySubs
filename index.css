@@ -74,37 +74,20 @@ body {
 }
 
 #episode-list li {
-    margin: 5px; /* Add some margin */
+    width: 45px;
+    margin: 5px;
     font-size: 12px;
-    display: inline-block; /* Ensure the width is adaptive */
-    padding: 5px; /* Specific padding inside the item */
 }
 
 #episode-list li a {
-    display: block;
-    padding: 7px;
     background-color: #cc0000; /* Darkish red background color */
     border-radius: 15px; /* Rounded corners */
     color: white;
     text-align: center;
+    width: 100%;
     text-decoration: none;
-    white-space: nowrap; /* Prevent text from wrapping */
-}
-
-/* Create the brick wall effect with line margin from left or right */
-#episode-list li {
     display: inline-block;
-}
-
-/* Add margin to every alternate row */
-#episode-list li:nth-child(4n+1),
-#episode-list li:nth-child(4n+2) {
-    margin-left: 20px;
-}
-
-#episode-list li:nth-child(4n+3),
-#episode-list li:nth-child(4n+4) {
-    margin-right: 20px;
+    padding: 5px;
 }
 
 .divider {
