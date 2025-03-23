@@ -25,7 +25,8 @@
         const episodeId = params.get("id");
 
         if (episodeId) {
-            get(ref(db, "episodes/season5/" + episodeId)).then(snapshot => {
+            // Update reference to match the new data structure
+            get(ref(db, "seasons/season5/episodes/" + episodeId)).then(snapshot => {
                 if (snapshot.exists()) {
                     let episode = snapshot.val();
                     document.getElementById("episode-title").innerText = episode.title;
