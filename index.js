@@ -35,7 +35,7 @@ get(ref(db, "episodes")).then(snapshot => {
 
             let seasonUl = document.createElement("ul");
             seasonUl.classList.add("season-list");
-            
+
             season.episodes.sort((a, b) => b.key - a.key); // Sort episodes in descending order
 
             season.episodes.forEach(episode => {
