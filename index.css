@@ -84,7 +84,8 @@ body {
     font-size: 12px;
 }
 
-.season-list li a {
+.season-list li a,
+.season-list li span {
     background-color: #cc0000;
     border-radius: 15px;
     color: white;
@@ -105,7 +106,8 @@ body {
     .main-container {
         padding: 0 10px;
     }
-    .season-list li a {
+    .season-list li a,
+    .season-list li span {
         width: 45px;
     }
 }
