@@ -1,52 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #191919;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding-top: 1px;
-}
-
-.main-container {
-    max-width: 480px;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.cover-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 480px;
-    overflow: hidden;
-}
-
-.cover-image {
-    width: 100%;
-    height: auto;
-    max-height: 270px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px 10px 0 0;
-}
-
-.cover-wrapper::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background: linear-gradient(to bottom, rgba(25, 25, 25, 0) 40%, #191919 100%);
-    pointer-events: none;
-}
-
-.episode-container {
-    padding: 20px 0;
-    color: #fff;
-    width: 100%;
-    text-align: center;
 }
 
 .header {
@@ -58,49 +11,35 @@ body {
 
 .header-text {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px; /* Reduced the size */
     margin-right: 10px;
-    color: white;
 }
 
 #episode-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the list */
-    gap: 10px;
     list-style: none;
-    padding: 0 20px;
-    margin: auto; /* Center the list */
+    padding: 0;
+    justify-content: center;
 }
 
 #episode-list li {
-    margin: 5px; /* Add some margin */
-    font-size: 12px;
-    display: inline-block; /* Ensure the width is adaptive */
-    padding: 5px; /* Specific padding inside the item */
+    margin: 5px;
+    font-size: 10px; /* Further reduced the font size */
 }
 
 #episode-list li a {
-    display: inline-block;
-    padding: 5px 15px; /* Adjust padding to make it slimmer */
-    background-color: #cc0000; /* Darkish red background color */
-    border-radius: 25px; /* More rounded corners */
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap; /* Prevent text from wrapping */
-    height: 30px; /* Adjust this value to change the height */
-    line-height: 30px; /* Center text vertically */
+    display: block;
+    padding: 2px 5px; /* Further adjusted the padding */
+    background-color: red; /* Red background color */
+    border-radius: 20px; /* More rounded corners */
+    color: white; /* White text color */
+    text-align: center; /* Center aligned text */
+    width: 100px; /* Fixed width to ensure buttons have the same length */
 }
 
-.divider {
-    height: 2px;
-    background: linear-gradient(to right, rgba(25, 25, 25, 0), #fff, rgba(25, 25, 25, 0)); /* Fade from left and right */
-    margin: 20px 0;
-}
-
-@media (max-width: 480px) {
-    .main-container {
-        padding: 0 10px;
+@media (max-width: 600px) {
+    #episode-list li a {
+        width: 80px; /* Adjust width for mobile devices */
     }
 }
