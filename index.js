@@ -35,12 +35,13 @@ get(ref(db, "episodes")).then(snapshot => {
 
             let seasonUl = document.createElement("ul");
             seasonUl.classList.add("season-list");
-
+            
             season.episodes.sort((a, b) => b.key - a.key); // Sort episodes in descending order
 
             season.episodes.forEach(episode => {
                 let li = document.createElement("li");
-                li.innerHTML = `<a href="episode.html?id=${episode.key}">${episode.key}</a>`;
+                // Update URL to include season and episode ID
+                li.innerHTML = `<a href="episode.html?id=${episode.key}&season=${season.season}">${episode.key}</a>`;
                 seasonUl.appendChild(li);
             });
 
