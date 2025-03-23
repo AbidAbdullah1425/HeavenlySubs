@@ -23,10 +23,11 @@
 
         const params = new URLSearchParams(window.location.search);
         const episodeId = params.get("id");
+        const seasonId = params.get("season");
 
-        if (episodeId) {
+        if (episodeId && seasonId) {
             // Update reference to match the new data structure
-            get(ref(db, "seasons/season5/episodes/" + episodeId)).then(snapshot => {
+            get(ref(db, `episodes/${seasonId}/${episodeId}`)).then(snapshot => {
                 if (snapshot.exists()) {
                     let episode = snapshot.val();
                     document.getElementById("episode-title").innerText = episode.title;
