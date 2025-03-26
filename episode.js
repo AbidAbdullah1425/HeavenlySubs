@@ -18,7 +18,7 @@ if (episodeId && seasonId) {
         if (snapshot.exists()) {
             let episode = snapshot.val();
             document.getElementById("episode-title").innerText = episode.title;
-            document.getElementById("video-player").src = `https://www.dailymotion.com/embed/video/${episode.video_id}`;
+            document.getElementById("video-player").innerHTML = episode.embed_code;
         } else {
             document.body.innerHTML = "<h1>Episode Not Found</h1>";
         }
